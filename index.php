@@ -1,6 +1,11 @@
 <?php
 // Let's get our SQL data!
 include "lib/sql.php";
+include "lib/parser.php";
+
+$parser = new Parser();
+
+printrThis($parser->parseData(getMemberData("raw")));
 ?>
 <html>
 <head>
