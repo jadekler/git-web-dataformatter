@@ -35,17 +35,17 @@ class PersonInformationParser extends Parser {
 			"rules" => "ALTIDAUTOGEN"
 			), 
 		"Equity_Code" => array(
-			"key" => null, 
+			"key" => "equity_code", 
 			"padSize" => 10,
 			"rules" => null
 			),
 		"National_Code" => array(
-			"key" => null, 
+			"key" => "nationality_code", 
 			"padSize" => 3,
 			"rules" => null
 			), 
 		"Home_Language_Code" => array(
-			"key" => null, 
+			"key" => "home_language_code", 
 			"padSize" => 10,
 			"rules" => null
 			), 
@@ -55,17 +55,17 @@ class PersonInformationParser extends Parser {
 			"rules" => null
 			),
 		"Citizen_Resident_Status_Code" => array(
-			"key" => null, 
+			"key" => "citizen_resident_status_code", 
 			"padSize" => 10,
 			"rules" => null
 			), 
 		"Socioeconomic_Status_Code" => array(
-			"key" => null, 
+			"key" => "socioeconomic_status_code", 
 			"padSize" => 2,
 			"rules" => null
 			), 
 		"Disability_Status_Code" => array(
-			"key" => null, 
+			"key" => "disability_status_code", 
 			"padSize" => 10,
 			"rules" => null
 			),
@@ -85,7 +85,7 @@ class PersonInformationParser extends Parser {
 			"rules" => null
 			), 
 		"Person_Title" => array(
-			"key" => null, 
+			"key" => "title", 
 			"padSize" => 10,
 			"rules" => null
 			), 
@@ -115,12 +115,12 @@ class PersonInformationParser extends Parser {
 			"rules" => null
 			),
 		"Person_Postal_Address_2" => array(
-			"key" => "AUTOGEN", 
+			"key" => null, 
 			"padSize" => 50,
 			"rules" => null
 			), 
 		"Person_Postal_Address_3" => array(
-			"key" => "AUTOGEN", 
+			"key" => null, 
 			"padSize" => 50,
 			"rules" => null
 			),
@@ -195,9 +195,9 @@ class PersonInformationParser extends Parser {
 			"rules" => null
 			), 
 		"Date_Stamp" => array(
-			"key" => "AUTOGEN", 
+			"key" => "modified", 
 			"padSize" => 8,
-			"rules" => "DATEAUTOGEN"
+			"rules" => "DATEFORMAT"
 			)
 		);
 

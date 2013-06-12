@@ -65,7 +65,7 @@ class PersonDesignationParser extends Parser {
 			"rules" => null
 			), 
 		"Prof_Body_Decision_Number" => array(
-			"key" => "", 
+			"key" => null, 
 			"padSize" => 20,
 			"rules" => null
 			), 
@@ -80,9 +80,9 @@ class PersonDesignationParser extends Parser {
 			"rules" => null
 			),
 		"Date_Stamp" => array(
-			"key" => "AUTOGEN", 
+			"key" => "modified", 
 			"padSize" => 8,
-			"rules" => "DATEAUTOGEN"
+			"rules" => "DATEFORMAT"
 			)
 		);
 

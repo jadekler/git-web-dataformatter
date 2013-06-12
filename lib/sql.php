@@ -11,7 +11,10 @@ function getMemberData($outputType = "json", $outputSource = "return", $filter =
 		SELECT * 
 		FROM repssa_db.members members 
 		LEFT JOIN repssa_db.statuses status 
-		ON members.status_id = status.id'.$filter);
+		ON members.status_id = status.id
+		LEFT JOIN repssa_db.titles titles
+		ON members.title_id = titles.id
+		'.$filter);
 	$resultArr = array();
 
 	// Collect data
