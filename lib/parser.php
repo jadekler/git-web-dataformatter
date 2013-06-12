@@ -95,7 +95,9 @@ class Parser {
 				// Check if it's a key we have data for (is there a column in our SQL DB corresponding to our formatOption key?)
 				if(isset($person[$option['key']]) || $option['key'] == 'AUTOGEN') {
 					// WE HAVE THIS DATA - let's use it
-					$datum = $person[$option['key']];
+					$datum = "";
+					if(isset($person[$option['key']])
+						$datum = $person[$option['key']];
 
 					// RULES - Let's check for and apply any rules this field has
 					if(isset($option['rules'])) {
