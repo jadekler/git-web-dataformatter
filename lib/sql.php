@@ -7,7 +7,11 @@ function getMemberData($outputType = "json", $outputSource = "return", $filter =
 	}
 
 	// Query server
-	$result = mysql_query('SELECT * FROM repssa_db.members '.$filter);
+	$result = mysql_query('
+		SELECT * 
+		FROM repssa_db.members members 
+		LEFT JOIN repssa_db.statuses status 
+		ON members.status_id = status.id'.$filter);
 	$resultArr = array();
 
 	// Collect data

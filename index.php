@@ -1,23 +1,11 @@
 <?php
 // Let's get our SQL data!
 include "lib/sql.php";
-include "lib/parser.php";
-
-$parser = new Parser();
-
-printrThis($parser->parseData(getMemberData("raw")));
+include "lib/personInformationParser.php";
+include "lib/personDesignationParser.php";
 ?>
 <html>
 <head>
-	<script type="text/javascript" src="js/jquery/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui/ui/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/md5.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap-responsive.min.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
@@ -26,13 +14,24 @@ printrThis($parser->parseData(getMemberData("raw")));
 			<h1>This is a tool <small>that pulls data and formats it for governmental use</small></h1>
 			<span>
 				This tool pulls data from a database, parses and formats it to government regulations, and exports it to a string
-				for importation on the government's side. This tool is designed to comply with South African governmental agency
-				database regulation.
+				for importation on the government's side. This tool is designed to comply with SAQA (South African Qualifications 
+				Authority) database regulation. See guidelines at 
+				<a href="wwww.saqa.org.za/nlrdpbinfo.asp">wwww.saqa.org.za/nlrdpbinfo.asp</a>
 			</span>
 		</div>
 		<div class="row-fluid">
 			<div class="span12">
+				<?php 
+				// Output the Person Information data
+				$parser = new PersonInformationParser();
+				printrThis($parser->getFormatOptionsTitlesAsString());
+				printrThis($parser->parseData(getMemberData("raw")));
 
+				// Output the Person Designation data
+				$parser = new PersonDesignationParser();
+				printrThis($parser->getFormatOptionsTitlesAsString());
+				printrThis($parser->parseData(getMemberData("raw")));
+				?>
 			</div>
 		</div>
 	</div>
