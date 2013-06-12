@@ -96,7 +96,7 @@ class Parser {
 				if(isset($person[$option['key']]) || $option['key'] == 'AUTOGEN') {
 					// WE HAVE THIS DATA - let's use it
 					$datum = "";
-					if(isset($person[$option['key']])
+					if(isset($person[$option['key']]))
 						$datum = $person[$option['key']];
 
 					// RULES - Let's check for and apply any rules this field has
