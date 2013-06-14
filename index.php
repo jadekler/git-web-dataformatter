@@ -27,7 +27,3 @@
 	</div>
 </body>
 </html>
-
-<script type="text/javascript">
-$(".btnDownloadSAQA").saqaDownloader();
-</script>

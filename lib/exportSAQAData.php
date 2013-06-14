@@ -3,7 +3,7 @@ include_once "sql.php";
 include_once "personInformationParser.php";
 include_once "personDesignationParser.php";
 
-// Checks for POST data from AJAX
+// Checks for POST data from buttons
 if(isset($_POST['fn'])) {
 	switch($_POST['fn']) {
 		case 'SAQA 35': 
