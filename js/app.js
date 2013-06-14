@@ -1,11 +1,10 @@
 // TEMPLATE CODE
-$.widget('dataformatter.someWidget', {
+$.widget('dataformatter.saqaDownloader', {
 	options: {
 
 	},
 
 	_init: function() {
-		// Basic init
 
 	}
 });

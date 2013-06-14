@@ -1,9 +1,3 @@
-<?php
-// Let's get our SQL data!
-include "lib/sql.php";
-include "lib/personInformationParser.php";
-include "lib/personDesignationParser.php";
-?>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/app.css">
@@ -21,17 +15,13 @@ include "lib/personDesignationParser.php";
 		</div>
 		<div class="row-fluid">
 			<div class="span12">
-				<?php 
-				// Output the Person Information data
-				$parser = new PersonInformationParser();
-				printrThis($parser->getFormatOptionsTitlesAsString());
-				printrThis($parser->parseData(getMemberData("raw")));
+				<form name="export" action="lib/exportSAQAData.php" method="POST">
+					<input type="submit" name="fn" value="SAQA 35">
+				</form>
 
-				// Output the Person Designation data
-				$parser = new PersonDesignationParser();
-				printrThis($parser->getFormatOptionsTitlesAsString());
-				printrThis($parser->parseData(getMemberData("raw")));
-				?>
+				<form name="export" action="lib/exportSAQAData.php" method="POST">
+					<input type="submit" name="fn" value="SAQA 36">
+				</form>
 			</div>
 		</div>
 	</div>
@@ -39,5 +29,5 @@ include "lib/personDesignationParser.php";
 </html>
 
 <script type="text/javascript">
-
+$(".btnDownloadSAQA").saqaDownloader();
 </script>
